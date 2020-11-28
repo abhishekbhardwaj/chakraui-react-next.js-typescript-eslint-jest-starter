@@ -1,0 +1,80 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb-typescript",
+        "prettier/@typescript-eslint",
+        "plugin:jsx-a11y/recommended",
+        "prettier/react",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "prettier",
+        "@typescript-eslint",
+        "jest",
+        "react"
+    ],
+    "env": {
+        "es6": true,
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off",
+        "import/no-cycle": "off",
+        "no-multi-assign": "off",
+        "import/imports-first": [
+            "error",
+            "absolute-first"
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "quotes": [
+            2,
+            "single",
+            {
+                "avoidEscape": true
+            }
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    },
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".js",
+                ".jsx",
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "babel-module": {},
+            "typescript": {}
+        },
+        "react": {
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        // Allows for the parsing of modern ECMAScript features
+        "ecmaVersion": 2018,
+        // Allows for the use of imports
+        "sourceType": "module",
+        // https://blog.geographer.fr/eslint-parser-services, https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
+        "project": "./tsconfig.json"
+    }
+}
