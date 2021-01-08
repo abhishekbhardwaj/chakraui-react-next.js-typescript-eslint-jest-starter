@@ -1,7 +1,9 @@
 import React from 'react'
-import { NextPage } from 'next'
 import Head from 'next/head'
-import { Flex, Heading } from '@chakra-ui/react'
+import { NextPage } from 'next'
+import { Flex } from '@chakra-ui/react'
+
+import MainHeading from '@src/components/main-heading/main-heading'
 
 const Home: NextPage = () => {
   const { SITE_NAME } = process.env
@@ -12,9 +14,7 @@ const Home: NextPage = () => {
         <meta charSet="utf-8" />
         <title>{SITE_NAME}</title>
       </Head>
-      <Heading as="h1" size="xl">
-        Hello World.
-      </Heading>
+      <MainHeading>Hello World.</MainHeading>
     </Flex>
   )
 }

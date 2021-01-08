@@ -34,6 +34,9 @@ All source code is located in the `src/` directory:
     **NOTE**: Feel free to move `pages` outside of `src/` if that's what you prefer. You'll just need to restart your local development server and everything should continue working as normal.
 
 2. `src/components` are all stateless reusable components.
+
+    - Includes a dummy `MainHeading` component with a JEST test as a sample. Feel free to delete this.
+
 3. `src/containers` are more of stateful components for more main level components, like a whole page or screen for example.
 4. `src/styles` folder is there just to house any styling.
 
