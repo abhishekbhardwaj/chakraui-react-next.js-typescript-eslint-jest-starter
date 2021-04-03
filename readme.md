@@ -37,16 +37,13 @@ All source code is located in the `src/` directory:
 
     - Includes a dummy `MainHeading` component with a JEST test as a sample. Feel free to delete this.
 
-3. `src/containers` are more of stateful components for more main level components, like a whole page or screen for example.
-4. `src/styles` folder is there just to house any styling.
+3. `src/styles` folder is there just to house any styling.
 
     - It currently contains the ChakraUI theme ready for you to extend. This file has already been imported in `_app.tsx` and is already supplied as a prop to `ChakraProvider`.
 
-5. All env variables are available in `.env` files (`.env` file isn't committed). Whenever you update `.env`, please update `.env.example` and `.env.test` and `next.config.js` to proxy all environment variables properly.
+4. All env variables are available in `.env` files (`.env` file isn't committed). Whenever you update `.env`, please update `.env.example` and `.env.test` and `next.config.js` to proxy all environment variables properly.
 
     - You can access these variables in the app source code anywhere using `process.env.<VAR_NAME>`.
-
-My personal preference is to have the bare minimum code in `./src/pages/` and group stateful logic components in `src/containers` directory. Helps keep everything in one place, neat and tidy. You can change this in any way you prefer.
 
 If you feel like changing the directory structure, please change the appropriate settings in the following files:
 
