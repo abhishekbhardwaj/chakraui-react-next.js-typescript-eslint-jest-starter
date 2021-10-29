@@ -2,6 +2,7 @@
 /node_modules
 .next
 .vscode
+tsconfig.tsbuildinfo
 
 # testing
 /coverage

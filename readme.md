@@ -47,7 +47,7 @@ All source code is located in the `src/` directory:
 
 If you feel like changing the directory structure, please change the appropriate settings in the following files:
 
-- `.babelrc`
+- `.swcrc`
 - `jest.config.js`
 - `tsconfig.json`
 - The `lint` and the `format` scripts in `package.json`
@@ -55,3 +55,48 @@ If you feel like changing the directory structure, please change the appropriate
 ## Note
 
 1. This project removes the `x-powered-by` response header via `next.config.js` by marking the `poweredByHeader` property as `false`.
+
+2. If you wish to use Babel instead of SWC (introduced with the Next.js v12 upgrade), please remove the `.swcrc` file and add a `.babelrc` file at the root with the following:
+
+```
+{
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./"
+                ],
+                "alias": {
+                    "@src": "./src"
+                },
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ]
+    ]
+}
+```
+
+Then, open `./jest.config.js` and find the `globals` config. Add `babelConfig` to it, like so:
+
+```
+{
+    globals: {
+        'ts-jest': {
+            tsconfig: '<rootDir>/tsconfig.jest.json',
+            babelConfig: true,
+            diagnostics: false,
+        },
+    },
+}
+```
+
+Also, run `yarn add -D @babel/core babel-plugin-module-resolver eslint-import-resolver-babel-module` to install Babel's dependencies.
